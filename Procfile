@@ -1,1 +1,1 @@
-CrAzIe_BoTz: python bot.py
+BotzHub: python bot.py
