@@ -41,7 +41,7 @@ else:
 async def check_user(id):
     ok = True
     try:
-        await BotzHub(GetParticipantRequest(channel='@CrAzIe_BoTz', user_id=id))
+        await BotzHub(GetParticipantRequest(channel='@BotzHub', user_id=id))
         ok = True
     except UserNotParticipantError:
         ok = False
@@ -50,7 +50,7 @@ async def check_user(id):
 @BotzHub.on(events.NewMessage(incoming=True, pattern="/start", func=lambda e: e.is_private))
 async def start(event):
     ok = await BotzHub(GetFullUserRequest(event.sender_id))
-    await event.reply(f"Hello {ok.user.first_name}!\nI am a telegraph uploader bot.",
+    await event.reply(f"Hola {ok.user.first_name}!\nI am a telegraph uploader bot.",
                      buttons=[
                          Button.inline("Help", data="help"),
                          Button.url("Dev", url="https://t.me/CrAzIe_BoTz")
